@@ -1,0 +1,32 @@
+﻿@page "/SignIn"
+<div class="sign-form">
+    <p class="welcome-text"> Hello, @(string.IsNullOrEmpty(Username) ? "__": Username) today is @DayOfWeek @Day-@Month-@Year</p>
+    <p class="welcome-text"> Please sign in to continue</p>
+    <EditForm >
+        @* <input type="text" class="sign-input form-control" placeholder="Username" value="@Username" @onchange="HandleUserNameChanged"/> *@
+        @* <ValidationInput @bind-Value="@Username"></ValidationInput> *@
+        <input type="text" class="sign-input form-control" placeholder="Username" @bind-value="Username"/>
+        <input type="password" class="sign-input form-control" placeholder="Password"/>
+        <button class="sign-button btn btn-primary" type="submit">Sign in</button>
+    </EditForm>
+    
+    <div class="signup">
+        <a href="/signup">sign up</a>
+    </div>
+    
+</div> 
+@code {
+    private string DayOfWeek { get;} = DateTime.Now.DayOfWeek.ToString();
+    private string Day { get;} = DateTime.Now.Day.ToString();
+    private string Month { get;} = DateTime.Now.Month.ToString();
+    private string Year { get;} = DateTime.Now.Year.ToString();
+    private string Username { get; set; } = "ben";
+    private void HandleUserNameChanged(ChangeEventArgs e)
+    {
+        Username = e.Value.ToString();
+    }
+    private void HandelUserNameValueChanged(string value)
+    {
+        Username = value;
+    }
+}
