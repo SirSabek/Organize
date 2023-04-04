@@ -9,13 +9,16 @@
 
 .val-tooltip{
     position: relative;
-    display: inline-block;
+    display: flex;
     flex: 0 0 20px;
     background: red;
+    border-top-right-radius:0.25rem;
+    border-bottom-right-radius:0.25rem;
 }
-
-.val-tooltip:hover .val-tooltip-text{
-    visibility: visible;
+.val-tooltip p {
+    color: white;
+    margin: auto;
+    font-size: 1.2em;
 }
 
 .val-tooltip .val-tooltip-text{
@@ -31,4 +34,8 @@
     bottom: 125%;
     left: 50%;
     margin-left: -60px;
+}
+
+.val-tooltip:hover .val-tooltip-text{
+    visibility: visible;
 }

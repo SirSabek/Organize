@@ -1,32 +1,35 @@
 ﻿@page "/SignIn"
+@inherits SignInBase
 <div class="sign-form">
-    <p class="welcome-text"> Hello, @(string.IsNullOrEmpty(Username) ? "__": Username) today is @DayOfWeek @Day-@Month-@Year</p>
+    <p class="welcome-text"> Hello, @(string.IsNullOrEmpty(User.Username) ? "User" : User.Username) today is @DayOfWeek </p>
     <p class="welcome-text"> Please sign in to continue</p>
-    <EditForm >
-        @* <input type="text" class="sign-input form-control" placeholder="Username" value="@Username" @onchange="HandleUserNameChanged"/> *@
-        @* <ValidationInput @bind-Value="@Username"></ValidationInput> *@
-        <input type="text" class="sign-input form-control" placeholder="Username" @bind-value="Username"/>
-        <input type="password" class="sign-input form-control" placeholder="Password"/>
+    <EditForm EditContext="@EditContext">
+        <DataAnnotationsValidator/>
+        <div class="sign-validation">
+            <ValidationInput
+                placeholder="Username"
+                @bind-Value="@User.Username"
+                Error="@GetError((() => User.Username))">
+            </ValidationInput>
+        </div>
+        @* <InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.Username"/> *@
+        @* <ValidationMessage For="@(() => User.Username)"></ValidationMessage> *@
+        @* <InputText type="password" class="sign-input form-control" placeholder="Password" @bind-Value="User.Password"/> *@
+        @* <ValidationMessage For="@(() => User.Password)"></ValidationMessage> *@
+        <div class="sign-validation">
+            <ValidationInput
+                type="password"
+                placeholder="Password"
+                @bind-Value="@User.Password"
+                Error="@GetError((() => User.Password))">
+            </ValidationInput>
+        </div>
+
         <button class="sign-button btn btn-primary" type="submit">Sign in</button>
     </EditForm>
-    
+
     <div class="signup">
         <a href="/signup">sign up</a>
     </div>
-    
-</div> 
-@code {
-    private string DayOfWeek { get;} = DateTime.Now.DayOfWeek.ToString();
-    private string Day { get;} = DateTime.Now.Day.ToString();
-    private string Month { get;} = DateTime.Now.Month.ToString();
-    private string Year { get;} = DateTime.Now.Year.ToString();
-    private string Username { get; set; } = "ben";
-    private void HandleUserNameChanged(ChangeEventArgs e)
-    {
-        Username = e.Value.ToString();
-    }
-    private void HandelUserNameValueChanged(string value)
-    {
-        Username = value;
-    }
-}
+
+</div>

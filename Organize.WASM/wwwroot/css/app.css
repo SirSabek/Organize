@@ -18,6 +18,7 @@ h1:focus {
 
 .validation-message {
     color: red;
+    position: absolute;
 }
 
 #blazor-error-ui {
@@ -81,3 +82,4 @@ h1:focus {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+    
