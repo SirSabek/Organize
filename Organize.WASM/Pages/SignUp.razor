@@ -1,6 +1,53 @@
 ﻿@page "/signup"
-<h3>SignUp page</h3>
-
-@code {
+@using Organize.Shared.Enums
+@inherits SignUpBase
+<div class="sign-form">
+<EditForm EditContext="@EditContext">
+    <DataAnnotationsValidator/>
+    <div class="sign-validation">
+        <ValidationInput
+            placeholder="Username"
+            @bind-Value="@User.Username"
+            Error="@GetError((() => User.Username))"/>
+    </div>
     
-}
+    <div class="sign-validation">
+        <ValidationInput
+            placeholder="Password"
+            @bind-Value="@User.Password"
+            Error="@GetError((() => User.Password))"/>
+    </div>
+    
+    <div class="sign-validation">
+        <ValidationInput
+            placeholder="FirstName"
+            @bind-Value="@User.FirstName"
+            Error="@GetError((() => User.FirstName))"/>
+    </div>
+    
+    <div class="sign-validation">
+        <ValidationInput
+            placeholder="LastName"
+            @bind-Value="@User.LastName"
+            Error="@GetError((() => User.LastName))"/>
+    </div>
+    
+    <div class="sign-validation">
+        <ValidationInput
+            placeholder="PhoneNumber"
+            @bind-Value="@User.PhoneNumber"
+            Error="@GetError((() => User.PhoneNumber))"/>
+    </div>
+    
+    <div class="sign-validation">
+        <Dropdown
+            TValue="GenderTypeEnum"
+            @bind-SelectedItem="@selectedGenderTypeDropdownItem"
+            SelectableItems="@GenderTypeDropdownItems">
+        </Dropdown>
+    </div>
+    
+    <button class="sign-button btn btn-primary" type="submit">Sign Up</button>
+
+</EditForm>
+</div>
