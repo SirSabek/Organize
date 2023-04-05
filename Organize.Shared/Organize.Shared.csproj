@@ -45,11 +45,11 @@
     <ItemGroup>
         <Compile Include="Class1.cs" />
         <Compile Include="Entities\User.cs" />
+        <Compile Include="Enums\GenderTypeEnum.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Contracts" />
-      <Folder Include="Enums" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
