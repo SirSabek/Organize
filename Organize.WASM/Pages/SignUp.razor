@@ -2,7 +2,7 @@
 @using Organize.Shared.Enums
 @inherits SignUpBase
 <div class="sign-form">
-<EditForm EditContext="@EditContext">
+<EditForm EditContext="@EditContext" OnValidSubmit="OnValidSubmit">
     <DataAnnotationsValidator/>
     <div class="sign-validation">
         <ValidationInput
