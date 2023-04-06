@@ -44,12 +44,10 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Class1.cs" />
+        <Compile Include="Contracts\IUserManager.cs" />
         <Compile Include="Entities\User.cs" />
         <Compile Include="Enums\GenderTypeEnum.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Contracts" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

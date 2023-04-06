@@ -3,7 +3,7 @@
 <div class="sign-form">
     <p class="welcome-text"> Hello, @(string.IsNullOrEmpty(User.Username) ? "User" : User.Username) today is @DayOfWeek </p>
     <p class="welcome-text"> Please sign in to continue</p>
-    <EditForm EditContext="@EditContext">
+    <EditForm EditContext="@EditContext" OnSubmit="OnSubmit">
         <DataAnnotationsValidator/>
         <div class="sign-validation">
             <ValidationInput

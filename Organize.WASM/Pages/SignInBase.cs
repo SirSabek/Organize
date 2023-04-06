@@ -1,25 +1,42 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using Organize.Business;
+using Organize.Shared.Contracts;
+using Organize.Shared.Entities;
 
 namespace Organize.WASM.Pages;
 
 public class SignInBase : SignBase
 {
-   protected string DayOfWeek { get;} = DateTime.Now.DayOfWeek.ToString();
+    protected string DayOfWeek { get;} = DateTime.Now.DayOfWeek.ToString();
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
 
-   protected async void OnSubmit()
+    [Inject] 
+    private IUserManager UserManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        User = new User
+        {
+            FirstName = "test",
+            LastName = "test",
+            PhoneNumber = "123456"
+        };
+
+        EditContext = new EditContext(User);
+    }
+
+    protected async void OnSubmit()
    {
-       if (EditContext.Validate())
+       if (!EditContext.Validate())
        {
            return;
-           
        }
 
-       var userManager = new UserManager();
-       var user = await userManager.TrySignInAndGetUserAsync(User);
+       var user = await UserManager.TrySignInAndGetUserAsync(User);
        if (user != null)
        {
             NavigationManager.NavigateTo("item");
