@@ -1,7 +1,8 @@
 ﻿namespace Organize.Shared.Entities
 {
-    public class Text : BaseEntity
+    public class TextItem : BaseItem
     {
-        
+        public string Subtitle { get; set; }
+        public string Detail { get; set; }
     }
 }

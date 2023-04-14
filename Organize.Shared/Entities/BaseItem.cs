@@ -1,7 +1,13 @@
-﻿namespace Organize.Shared.Entities
+﻿using Organize.Shared.Enums;
+
+namespace Organize.Shared.Entities
 {
-    public class BaseItem
+    public class BaseItem : BaseEntity
     {
-        
+        public int ParentId { get; set; }
+        public ItemTypeEnum ItemTypeEnum { get; set; }
+        public int Position { get; set; }
+        public bool IsDone { get; set; }
+        public string Title { get; set; }
     }
 }

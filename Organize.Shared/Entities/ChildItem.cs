@@ -1,6 +1,6 @@
 ﻿namespace Organize.Shared.Entities
 {
-    public class ChildItem
+    public class ChildItem : BaseItem
     {
         
     }
