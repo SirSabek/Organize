@@ -44,9 +44,17 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Class1.cs" />
+        <Compile Include="Contracts\ICurrentUserService.cs" />
         <Compile Include="Contracts\IUserManager.cs" />
+        <Compile Include="Entities\BaseEntity.cs" />
+        <Compile Include="Entities\BaseItem.cs" />
+        <Compile Include="Entities\ChildItem.cs" />
+        <Compile Include="Entities\ParentItem.cs" />
+        <Compile Include="Entities\TextItem.cs" />
+        <Compile Include="Entities\UrlItem.cs" />
         <Compile Include="Entities\User.cs" />
         <Compile Include="Enums\GenderTypeEnum.cs" />
+        <Compile Include="Enums\ItemTypeEnum.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
