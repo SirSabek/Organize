@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.WASM", "Organize.WASM\Organize.WASM.csproj", "{85B710CD-C522-4A67-BD6B-0BB148465B11}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.WASM", "Organize.WASM\Organize.WASM.csproj", "{85B710CD-C522-4A67-BD6B-0BB148465B11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.Business", "Organize.Business\Organize.Business.csproj", "{91748121-C64B-4238-8FBD-193E11BD44CF}"
 EndProject
@@ -8,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.DataAccess", "Orga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.Shared", "Organize.Shared\Organize.Shared.csproj", "{77A9ECE7-1348-4BE5-AB9C-CF1F9F930DDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralUI", "GeneralUI\GeneralUI.csproj", "{E0D1B6F5-1AF4-43F6-9831-FA004B359FBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneralUI", "GeneralUI\GeneralUI.csproj", "{E0D1B6F5-1AF4-43F6-9831-FA004B359FBB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organize.Test", "Organize.Test\Organize.Test.csproj", "{543F7D2B-358F-4E11-A964-DF821B76F83B}"
 EndProject
@@ -42,5 +45,8 @@ Global
 		{543F7D2B-358F-4E11-A964-DF821B76F83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{543F7D2B-358F-4E11-A964-DF821B76F83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{543F7D2B-358F-4E11-A964-DF821B76F83B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
