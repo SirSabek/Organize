@@ -1,3 +1,4 @@
+using System.Globalization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Organize.Business;
@@ -10,6 +11,13 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddSingleton<IUserManager, UserManager>();
-//builder.Services.AddSingleton<IUserManager, UserManagerTest>();
-await builder.Build().RunAsync();
+//builder.Services.AddScoped<IUserManager, UserManagerTest>();
+builder.Services.AddScoped<IUserManager, UserManager>();
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+
+var host = builder.Build();
+
+var currentUserService = host.Services.GetRequiredService<ICurrentUserService>();
+TestData.CreateTestUser();
+currentUserService.CurrentUser = TestData.TestUser;
+await host.RunAsync();

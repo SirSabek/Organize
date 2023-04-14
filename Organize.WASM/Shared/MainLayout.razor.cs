@@ -1,6 +1,13 @@
-﻿namespace Organize.WASM.Shared;
+﻿using Microsoft.AspNetCore.Components;
+using Organize.Shared.Contracts;
 
-public class MainLayout_razor
+namespace Organize.WASM.Shared;
+
+public partial class MainLayout : LayoutComponentBase
 {
-    
+    [Inject] public ICurrentUserService CurrentUserService { get; set; }
+    protected void SignOut()
+    {
+        
+    }
 }

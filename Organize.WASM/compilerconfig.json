@@ -26,5 +26,9 @@
   {
     "outputFile": "wwwroot/css/Components/itemsOverview.css",
     "inputFile": "wwwroot/css/Components/itemsOverview.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Components/itemEdit.css",
+    "inputFile": "wwwroot/css/Components/itemEdit.scss"
   }
 ]
